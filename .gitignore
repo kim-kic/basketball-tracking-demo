@@ -202,8 +202,7 @@ Temporary Items
 # My additions
 noupload/
 fig/
-package*
 node_modules/
-.prettier*
-.husky/
 .vscode/
+*.pt
+videos/

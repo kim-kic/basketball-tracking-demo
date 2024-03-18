@@ -1,6 +1,5 @@
 ---
 marp: true
-#theme: gaia
 theme: mygaia
 class: invert
 size: 16:9
@@ -77,6 +76,7 @@ $ python3 -m venv .venv
 
 > Python環境構築ガイド https://www.python.jp/install/macos/virtualenv.html
 
+
 ---
 ## 仮想環境の起動
 
@@ -99,7 +99,19 @@ $ source .venv/bin/activate
 > $\dagger$ https://docs.ultralytics.com/ja/quickstart/#use-ultralytics-with-python
 
 
+# サンプル画像
 
+File:ASVEL-Gravelines - 2018-04-28.webm$^\dagger$
+
+<center> 
+
+![width:600](https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/ASVEL-Gravelines_-_2018-04-28.webm/1024px--ASVEL-Gravelines_-_2018-04-28.webm.jpg)
+
+</center>
+
+
+
+> $^\dagger$ Creative Commons CC0 1.0 Universal Public Domain Dedication<br> &nbsp;&nbsp; https://commons.wikimedia.org/wiki/File:ASVEL-Gravelines_-_2018-04-28.webm
 
 # トラッキング
 
@@ -110,10 +122,12 @@ from ultralytics import YOLO
 # モデルの読み込み（物体検知モデル）
 model = YOLO('yolov8n.pt')  # Load an official Detect model
 
-source='https://www.youtube.com/watch?v=RZsCJZVLwmg'
+source = 'https://www.youtube.com/watch?v=RZsCJZVLwmg'
 
 # Perform tracking with the model
-results = model.track(source=source, show=True)  # Tracking with default tracker
+# Tracking with default tracker
+results = model.track(source=source, show=True)
 
-results = model.track(source="https://youtu.be/LNwODJXcvt4", show=True, tracker="bytetrack.yaml")  # Tracking with ByteTrack tracker
+# Tracking with ByteTrack tracker
+results = model.track(source=source, show=True, tracker="bytetrack.yaml") 
 ```
